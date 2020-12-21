@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<!-- © 2020 Copyright: Tahu Coding -->
 @section('content')
 <div class="container">
     <div class="row">

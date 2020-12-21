@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-| <!-- © 2020 Copyright: Tahu Coding -->
+| 
 */
 
 Route::get('/', function () {
@@ -32,7 +32,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/transcation/bayar','TransactionController@bayar');
     Route::get('/transcation/history','TransactionController@history');
     Route::get('/transcation/laporan/{id}','TransactionController@laporan');
+
+Route::get('/manageusers', 'UserController@usersView')->name('manageusers');
+Route::get('/users/register', 'UserController@register');
+Route::post('/users/createUser', 'UserController@create');
+Route::get('/users/editUser/{id}', 'UserController@edit');
+Route::post('/users/updateUser/{id}', 'UserController@update');
+Route::get('/users/dropUser/{id}', 'UserController@drop');
+Route::get('/users/cetak_pdf', 'UserController@cetak_pdf');
 });
+
 
 
 

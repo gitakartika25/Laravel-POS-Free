@@ -1,11 +1,11 @@
 @extends('layouts.app')
-<!-- © 2020 Copyright: Tahu Coding -->
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-white"><h4 class="font-weight-bold">Products</h4>
+                <div class="card-header bg-white"><h4 class="font-weight-bold">Menu</h4>
 
                 </div>
                 <div class="card-body">
@@ -16,7 +16,7 @@
                         @csrf
                         <input type="hidden" name="id">
                         <div class="form-group">
-                            <label for="product">Product Name</label>
+                            <label for="product">Menu Name</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                             @include('layouts.error', ['name' => 'name'])
                         </div>
@@ -29,7 +29,7 @@
                                     @include('layouts.error', ['name' => 'price'])
                                 </div>
                                 <div class="form-group">
-                                    <label>Gambar Hero</label>
+                                    <label>Gambar Menu</label>
                                     <div>
                                         <div class="custom-file">
                                             <br>
@@ -58,7 +58,7 @@
                                 @include('layouts.error', ['name' => 'description'])
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Submit Product</button>
+                            <button type="submit" class="btn btn-dark btn-block">Submit Menu</button>
                         </div>
                     </form>
                 </div>
@@ -67,4 +67,3 @@
     </div>
 </div>
 @endsection
-<!-- © 2020 Copyright: Tahu Coding -->

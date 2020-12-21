@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-//© 2020 Copyright: Tahu Coding
+
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<!-- © 2020 Copyright: Tahu Coding -->
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -9,7 +9,7 @@
                     <form action="{{ url('/transcation') }}" method="get">
                         <div class="row">
                             <div class="col">
-                                <h4 class="font-weight-bold">Products</h4>
+                                <h2 class="font-weight-bold">Order here &#9759;</h2>
                             </div>
                             <div class="col text-right">
                                 <select name="" id="" class="form-control from-control-sm" style="font-size: 12px">
@@ -20,16 +20,16 @@
                             </div>
                             <div class="col"><input type="text" name="search"
                                     class="form-control form-control-sm col-sm-12 float-right"
-                                    placeholder="Search Product..." onblur="this.form.submit()"></div>
+                                    placeholder="Search Menu..." onblur="this.form.submit()"></div>
                             <div class="col-sm-3"><button type="submit"
-                                    class="btn btn-primary btn-sm float-right btn-block">Cari Product</button></div>
+                                    class="btn btn-dark btn-sm float-right btn-block">Cari Menu</button></div>
                         </div>
                     </form>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         @foreach ($products as $product)
-                        <div style="width: 16.66%;border:1px solid rgb(243, 243, 243)" class="mb-4">
+                        <div style="width: 25% ;border:3px solid rgb(243, 243, 243)" class="mb-4">
                             <div class="productCard">
                                 <div class="view overlay">
                                     <form action="{{url('/transcation/addproduct', $product->id)}}" method="POST">
@@ -68,7 +68,7 @@
                 <div class="card-header bg-white">
                     <div class="row">
                         <div class="col-sm-4">
-                            <h4 class="font-weight-bold">Cart</h4>
+                            <h4 class="font-weight-bold">Reserve</h4>
                         </div>
                         <div class="col-sm-8">
                             <select name="" id="" class="form-control from-control-sm" style="font-size: 13px">
@@ -85,7 +85,7 @@
                             <thead>
                                 <tr>
                                     <th width="10%">No</th>
-                                    <th width="30%">Nama Product</th>
+                                    <th width="30%">Nama Menu</th>
                                     <th width="30%">Qty</th>
                                     <th width="30%" class="text-right">Sub Total</th>
                                 </tr>
@@ -229,14 +229,14 @@
                 
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="saveButton" disabled onClick="openWindowReload(this)">Save transcation</button>
+                    <button type="submit" class="btn btn-dark" id="saveButton" disabled onClick="openWindowReload(this)">Save transcation</button>
                 </div>
                 </form>
             </div>
         </div>
     </div>
     @endsection
-    <!-- © 2020 Copyright: Tahu Coding -->
+    
     <!-- Ini error harusnya bisa dinamis ambil value dari controller tp agar cepet ya biar aja gini silahkan modifikasi  -->
     @push('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -261,7 +261,7 @@
     @if(Session::has('success'))
     <script>
         toastr.success(
-            'Transaksi berhasil | Thank Your from Tahu Coding'
+            'Transaksi berhasil | Thank Your from Gitsa Resto'
         )
 
     </script>
@@ -376,5 +376,5 @@
         }
 
     </style>
-    <!-- © 2020 Copyright: Tahu Coding -->
+ 
     @endpush

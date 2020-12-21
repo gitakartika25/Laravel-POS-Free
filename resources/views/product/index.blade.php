@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<!-- © 2020 Copyright: Tahu Coding -->
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,12 +8,12 @@
                 <div class="card-header bg-white">
                     <form action="{{ route('products.index') }}" method="get">
                         <div class="row">  
-                            <div class="col"><h4 class="font-weight-bold">Products</h4></div>
+                            <div class="col"><h4 class="font-weight-bold">Menu</h4></div>
                             <div class="col"><input type="text" name="search"
                                     class="form-control form-control-sm col-sm-10 float-right"
-                                    placeholder="Search Product..." onblur="this.form.submit()"></div>
+                                    placeholder="Search Menu..." onblur="this.form.submit()"></div>
                             <div class="col-sm-2"><a href="{{ url('/products/create')}}"
-                                    class="btn btn-primary btn-sm float-right btn-block">Add Product</a></div>
+                                    class="btn btn-dark btn-sm float-right btn-block" >Add Menu</a></div>
                         </div>
                     </form>
                 </div>
@@ -38,7 +38,7 @@
                                     <p class="card-text text-center">Rp. {{ number_format($product->price,2,',','.') }}
                                     </p>
                                     <a href="{{ route('products.edit', $product->id) }}"
-                                        class="btn btn-primary btn-block btn-sm">Details</a>
+                                        class="btn btn-dark btn-block btn-sm">Details</a>
                                 </div>
                             </div>
                         </div>
@@ -69,4 +69,3 @@
 
     </style>
     @endpush
-<!-- © 2020 Copyright: Tahu Coding -->

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<!-- © 2020 Copyright: Tahu Coding -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,12 +7,12 @@
                 <div class="card-header bg-white">
                     <form action="{{ route('products.destroy', $product->id ) }}" method="POST">
                         <label class="font-weight-bold">
-                            <h4 class="font-weight-bold">Products</h4>
+                            <h4 class="font-weight-bold">Menu</h4>
                         </label>
                         @method('delete')
                         @csrf
                         <button class="btn btn-danger btn-sm float-right"
-                            onclick="return confirm('Apakah anda yakin menghapus data ini ?');">Delete Product</button>
+                            onclick="return confirm('Apakah anda yakin menghapus data ini ?');">Delete Menu</button>
                     </form>
                 </div>
                 <div class="card-body">
@@ -28,7 +27,7 @@
                         <input type="hidden" name="id" value="{{ $product->id }}">
                         <input type="hidden" name="qty" value="{{ $product->qty }}">
                         <div class="form-group">
-                            <label for="product">Product Name</label>
+                            <label for="product">Nama Menu</label>
                             <input type="text" class="form-control" name="name"
                                 value="{{ old('name', $product->name) }}">
                             @include('layouts.error', ['name' => 'name'])
@@ -42,7 +41,7 @@
                                     @include('layouts.error', ['name' => 'price'])
                                 </div>
                                 <div class="form-group">
-                                    <label>Gambar Hero</label>
+                                    <label>Gambar Menu</label>
                                     <div>
                                         <div class="custom-file">
                                             <br>
@@ -84,10 +83,10 @@
                             @include('layouts.error', ['name' => 'description'])
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Update Product</button>
+                            <button type="submit" class="btn btn-dark btn-block">Update Menu</button>
                         </div>
                     </form>
-                    <H4>Product History</H4>
+                    <H4>Menu History</H4>
                     <table class="table" id="dtMaterialDesignExample">
                         <thead>
                             <tr>
@@ -120,5 +119,5 @@
     </div>
 </div>
 @endsection
-<!-- © 2020 Copyright: Tahu Coding -->
+
 

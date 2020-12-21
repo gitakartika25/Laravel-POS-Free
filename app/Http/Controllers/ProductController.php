@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-//© 2020 Copyright: Tahu Coding
+
 use File;
 use App\Product;
 use App\HistoryProduct;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +14,16 @@ use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
+
+public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next){
+        if(Gate::allows('admin-display')) return $next($request);
+        abort(403, 'Anda tidak memiliki cukup hak akses');
+ });
+    }
+
     public function index(){
        
         $products = Product::when(request('search'), function($query){
@@ -163,5 +173,5 @@ class ProductController extends Controller
         
     }
 
-    //© 2020 Copyright: Tahu Coding
+  
 }

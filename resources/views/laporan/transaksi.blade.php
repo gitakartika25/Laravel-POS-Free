@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<!-- © 2020 Copyright: Tahu Coding -->
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -60,7 +60,7 @@
                                 <thead>
                                     <tr>
                                     <th>No</th>
-                                    <th>Product</th>
+                                    <th>Orders</th>
                                     <th>Quantity</th>
                                 </tr>
                                 </thead>

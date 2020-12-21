@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-//© 2020 Copyright: Tahu Coding
+
 use Illuminate\Http\Request;
 use App\Product;
 use App\HistoryProduct;
 use App\ProductTranscation;
 //sorry kalau ada typo dalam penamaan dalam bahasa inggris 
+use Illuminate\Support\Facades\Gate;
 use App\Transcation;
 use Auth;
 use DB;
@@ -19,6 +20,16 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class TransactionController extends Controller
 {
+
+public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next){
+        if(Gate::allows('admin-display')) return $next($request);
+        abort(403, 'Anda tidak memiliki cukup hak akses');
+ });
+    }
+
     public function index(){    
              
         //product
@@ -252,4 +263,4 @@ class TransactionController extends Controller
 
     
 }
-//© 2020 Copyright: Tahu Coding
+
