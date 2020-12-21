@@ -32,6 +32,13 @@
                                 value="{{ old('name', $product->name) }}">
                             @include('layouts.error', ['name' => 'name'])
                         </div>
+                        <div class="form-group">
+                            <label for="product">Category</label>
+                            <input type="text" class="form-control" name="name"
+                                value="{{ old('name', $product->category) }}">
+                            @include('layouts.error', ['name' => 'category'])
+                        </div>
+
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -40,6 +47,21 @@
                                         value="{{ old('price' , $product->price) }}">
                                     @include('layouts.error', ['name' => 'price'])
                                 </div>
+
+                             <div class="form-group">
+                            <label for="description">Trailer</label>
+                            <textarea name="description" cols="30" rows="10"
+                                class="form-control">{{ old('trailer', $product->trailer) }}</textarea>
+                            @include('layouts.error', ['name' => 'trailer'])
+                                </div>
+
+                                <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" cols="30" rows="10"
+                                class="form-control">{{ old('description', $product->description) }}</textarea>
+                            @include('layouts.error', ['name' => 'description'])
+                                </div>
+
                                 <div class="form-group">
                                     <label>Gambar Menu</label>
                                     <div>
@@ -57,6 +79,7 @@
                                     @endif
                                     @include('layouts.error', ['name' => 'image'])
                                 </div>
+
                             </div>
                             <div class="col">
                                 <div class="form-group">
@@ -76,12 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea name="description" cols="30" rows="10"
-                                class="form-control">{{ old('description', $product->description) }}</textarea>
-                            @include('layouts.error', ['name' => 'description'])
-                        </div>
+                        
                         <div class="form-group">
                             <button type="submit" class="btn btn-dark btn-block">Update Menu</button>
                         </div>

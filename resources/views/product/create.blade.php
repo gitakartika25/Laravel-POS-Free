@@ -16,11 +16,17 @@
                         @csrf
                         <input type="hidden" name="id">
                         <div class="form-group">
-                            <label for="product">Menu Name</label>
+                            <label for="name">Menu Name</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                             @include('layouts.error', ['name' => 'name'])
                         </div>
 
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <input type="text" class="form-control" name="category" value="{{ old('category') }}">
+                            @include('layouts.error', ['name' => 'category'])
+
+                        </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -28,6 +34,21 @@
                                     <input type="number" class="form-control" name="price" value="{{ old('price') }}">
                                     @include('layouts.error', ['name' => 'price'])
                                 </div>
+
+                           <div class="form-group">
+                            <label for="trailer">Trailer</label>
+                            <textarea name="trailer" cols="30" rows="10"
+                                class="form-control">{{ old('trailer') }}</textarea>
+                                @include('layouts.error', ['name' => 'trailer'])
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" cols="30" rows="10"
+                                class="form-control">{{ old('description') }}</textarea>
+                                @include('layouts.error', ['name' => 'description'])
+                        </div>
+
                                 <div class="form-group">
                                     <label>Gambar Menu</label>
                                     <div>
@@ -42,6 +63,7 @@
                                     <div class="col-sm-12"><img id="output" src="" class="img-fluid"></div>
                                     @include('layouts.error', ['name' => 'image'])
                                 </div>
+
                             </div>
                             <div class="col">
                                 <div class="form-group">
@@ -51,12 +73,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea name="description" cols="30" rows="10"
-                                class="form-control">{{ old('description') }}</textarea>
-                                @include('layouts.error', ['name' => 'description'])
-                        </div>
+                       
                         <div class="form-group">
                             <button type="submit" class="btn btn-dark btn-block">Submit Menu</button>
                         </div>

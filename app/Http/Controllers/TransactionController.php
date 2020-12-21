@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
+use App\Resto;
 use App\HistoryProduct;
 use App\ProductTranscation;
 //sorry kalau ada typo dalam penamaan dalam bahasa inggris 
@@ -33,7 +33,7 @@ public function __construct()
     public function index(){    
              
         //product
-        $products = Product::when(request('search'), function($query){
+        $products = Resto::when(request('search'), function($query){
                         return $query->where('name','like','%'.request('search').'%');
                     })
                     ->orderBy('created_at','desc')
@@ -102,7 +102,7 @@ public function __construct()
     }
 
     public function addProductCart($id){
-        $product = Product::find($id);      
+        $product = Resto::find($id);      
                 
         $cart = \Cart::session(Auth()->id())->getContent();        
         $cek_itemId = $cart->whereIn('id', $id);  
@@ -159,7 +159,7 @@ public function __construct()
             });
 
             foreach($filterCart as $cart){
-                $product = Product::find($cart['id']);
+                $product = Resto::find($cart['id']);
                 
                 if($product->qty == 0){
                     return redirect()->back()->with('errorTransaksi','jumlah pembayaran gak valid');  
@@ -213,7 +213,7 @@ public function __construct()
     }
 
     public function decreasecart($id){
-        $product = Product::find($id);      
+        $product = Resto::find($id);      
                 
         $cart = \Cart::session(Auth()->id())->getContent();        
         $cek_itemId = $cart->whereIn('id', $id); 
@@ -233,7 +233,7 @@ public function __construct()
 
 
     public function increasecart($id){
-        $product = Product::find($id);     
+        $product = Resto::find($id);     
         
         $cart = \Cart::session(Auth()->id())->getContent();        
         $cek_itemId = $cart->whereIn('id', $id); 
