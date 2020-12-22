@@ -27,15 +27,15 @@
                         <input type="hidden" name="id" value="{{ $product->id }}">
                         <input type="hidden" name="qty" value="{{ $product->qty }}">
                         <div class="form-group">
-                            <label for="product">Nama Menu</label>
+                            <label for="name">Nama Menu</label>
                             <input type="text" class="form-control" name="name"
                                 value="{{ old('name', $product->name) }}">
                             @include('layouts.error', ['name' => 'name'])
                         </div>
                         <div class="form-group">
-                            <label for="product">Category</label>
-                            <input type="text" class="form-control" name="name"
-                                value="{{ old('name', $product->category) }}">
+                            <label for="category">Category</label>
+                            <input type="text" class="form-control" name="category"
+                                value="{{ old('category', $product->category) }}">
                             @include('layouts.error', ['name' => 'category'])
                         </div>
 
@@ -49,8 +49,8 @@
                                 </div>
 
                              <div class="form-group">
-                            <label for="description">Trailer</label>
-                            <textarea name="description" cols="30" rows="10"
+                            <label for="trailer">Trailer</label>
+                            <textarea name="trailer" cols="30" rows="10"
                                 class="form-control">{{ old('trailer', $product->trailer) }}</textarea>
                             @include('layouts.error', ['name' => 'trailer'])
                                 </div>

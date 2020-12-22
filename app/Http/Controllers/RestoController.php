@@ -134,7 +134,6 @@ class RestoController extends Controller
                         'description' => $request->description,   
                         'image' => 'uploads/images/'.$new_gambar,
                         'qty' => $request->qty,          
-                        
                         'user_id' => Auth::id()
                 ]);        
 
